@@ -59,8 +59,11 @@ const AnimatedBackground = () => {
 
     // Animation loop
     const animate = (): void => {
-      // Clear canvas with semi-transparent background for trail effect
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      // Clear canvas completely to prevent background color change
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Add a subtle dark tint each frame (no accumulation due to clearRect)
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.08)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw dots

@@ -18,6 +18,7 @@ export const env = {
 	rpcUrl: getEnv('RPC_URL'),
 	privateKey: getEnv('PRIVATE_KEY'),
 	network: process.env.NETWORK || 'sepolia',
+	chainId: Number(process.env.CHAIN_ID || '11155111'), // Default to Sepolia
 	launchpadAddress: getEnv('LAUNCHPAD_CONTRACT_ADDRESS'),
 	launchpadAbiPath: process.env.LAUNCHPAD_ABI_PATH || './abi/LaunchpadABI.json',
 	launchpadUseMock: process.env.LAUNCHPAD_USE_MOCK === 'true',
